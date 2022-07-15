@@ -1,14 +1,34 @@
 const fs = require('fs');
-// const http = require('http');
+const path = require('path');
 const https = require('https');
 const express = require('express');
 const app = express();
 
+
+app.use(express.static(path.join(__dirname, '../proj3-frontend/assets')));
+app.use(express.static(path.join(__dirname, '../proj3-frontend/html')));
+app.use(express.static(path.join(__dirname, '../proj3-frontend/css')));
+app.use(express.static(path.join(__dirname, '../proj3-frontend/dist')));
+
 app.get('/', (req, res) => {
-    console.log(req.protocol);
-    res.send('Hello World!');
+    console.log(`Get Request to ${req.url}`);
+    res.sendFile(path.join(__dirname, '../proj3-frontend/html/index.html'));
 });
 
+app.get('/login', (req, res) => {
+    console.log(`Get Request to ${req.url}`);
+    res.sendFile(path.join(__dirname, '../proj3-frontend/html/login.html'));
+});
+
+app.get('/signup', (req, res) => {
+    console.log(`Get Request to ${req.url}`);
+    res.sendFile(path.join(__dirname, '../proj3-frontend/html/signup.html'));
+});
+
+app.get('/myworld', (req, res) => {
+    console.log(`Get Request to ${req.url}`);
+    res.sendFile(path.join(__dirname, '../proj3-frontend/html/myworld.html'));
+});
 
 const privateKey1 = fs.readFileSync('/etc/letsencrypt/live/www.mdcmpwrld.ga/privkey.pem', 'utf8');
 const certificate1 = fs.readFileSync('/etc/letsencrypt/live/www.mdcmpwrld.ga/cert.pem', 'utf8');
@@ -19,12 +39,7 @@ const credentials = {
     ca: ca1
 }
 
-// const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
-
-// httpServer.listen(80, () => {
-//     console.log('HTTP Server running on port 80');
-// });
 
 httpsServer.listen(443, () => {
     console.log('HTTPS Server running on port 443');
