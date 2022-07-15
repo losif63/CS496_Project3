@@ -24,6 +24,7 @@ setPersistence(auth, browserLocalPersistence).then(() => {
             console.log('Changing button redirection!');
             document.getElementById("btnLogin").href = "/myworld";
             document.getElementById("btnSignup").href = "/myworld";
+            document.getElementById("btn").href = "/myworld";
         }else if(!user && window.location.href === "https://www.mdcmpwrld.ga/myworld"){
             console.log(`User is not logged in!`);
             location.href = "/login";
