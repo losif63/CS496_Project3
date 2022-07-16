@@ -25,8 +25,10 @@ setPersistence(auth, browserLocalPersistence).then(() => {
             console.log(error);
             if(error.code === AuthErrorCodes.INVALID_PASSWORD) {
                 lblLoginErrorMessage.innerHTML = `Wrong password. Try again.`;
+            } else if (error.code === AuthErrorCodes.INVALID_EMAIL){
+                lblLoginErrorMessage.innerHTML = `Unregistered email. Try again.`;
             } else {
-                lblLoginErrorMessage.innerHTML = `Error: ${error.message}`;
+                lblLoginErrorMessage.innerHTML = `Error. Try again.`;
             }
         }
     }

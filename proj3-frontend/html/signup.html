@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <script src="checkauth.js"></script>
+<script src="checkauth.js"></script>
+<link rel="stylesheet" type="text/css" href="signup.css" />
+<link rel="shortcut icon" type="x-icon" href="icon_big.png">
+<script src="https://kit.fontawesome.com/06ea089c1f.js" crossorigin="anonymous"></script>
+
 <head>
-    <title>Signup Page</title>
+  <title>Sign Up</title>
 </head>
 
 <body>
-    <div id="signup">
-        <div class="header">
-          <h1>Signup</h1>
-        </div>
+  <div class="container-body">
+    <div class="container">
+      <div class="header">
+        <h1>Sign Up</h1>
+      </div>
+      <div class="main">
         <form>
-          <div class="group">
-            <input id="txtEmail" type="email">
-            <label>Email</label>
-          </div>
-          <div class="group">
-            <input id="txtPassword" type="password">
-            <label>Password</label>
-          </div>
+          <span>
+            <i class="fa fa-user"></i>
+            <input id="txtEmail" type="email" placeholder="Email" name="">
+          </span><br>
+          <span>
+            <i class="fa fa-lock"></i>
+            <input id="txtPassword" type="password" placeholder="Password" name="">
+          </span><br>
           <div id="divSignupError" class="group">
-            <div id="lblSignupErrorMessage" class="errorlabel">(Potential Error message)</div>
+            <div id="lblSignupErrorMessage" class="errorlabel"></div>
           </div>
-          <button id="btnSignup" type="button" class="button buttonBlue">Sign up</button>
+          <button id="btnSignup" type="button" class="button buttonBlue">Sign Up</button>
         </form>
       </div>
-
+    </div>
+  </div>
 </body>
+
 </html>
 
 <script src="signup.js"></script>

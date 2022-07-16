@@ -3,16 +3,19 @@
 
 <head>
     <title>Mad World</title>
-    <link rel="stylesheet type=" text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="shortcut icon" type="x-icon" href="icon_big.png">
 </head>
 
 <body>
     <header>
-        <p><img src="icon.png" id="icon"><a href="#" class="logo2"></i>Mad World</a></p>
+        <ul id="logoheader">
+            <img src="icon_big.png" id="logoicon">
+            <a href="/" class="logo2" id="logo"></i>Mad World</a>
+        </ul>
         <!-- <a href="#" class="logo"></i>Mad World</a> -->
         <ul>
-            <li><a href="#" class="active">Home</a></li>
+            <li><a href="/" class="active">Home</a></li>
             <li><a href="/myworld" id="btnMyworld">My World</a></li>
             <li><a href="/login" id="btnLogin">Login</a></li>
             <li><a href="/signup" id="btnSignup">Sign Up</a></li>
@@ -30,7 +33,7 @@
 
     </section>
     <script src="checkauth.js"></script>
-    <div class="sec" id="sec">
+    <div class="sec" id="sec" style="height: 2000px">
         <h2>How to play:</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id tortor congue, consectetur orci sed,
             scelerisque nibh. Pellentesque tincidunt pellentesque eros eget tempor. Phasellus vel tellus nisl. Cras non
@@ -101,23 +104,28 @@
         let text = document.getElementById('text');
         let btn = document.getElementById('btn');
 
-        window.addEventListener('scroll', function () {
-            let value = window.scrollY;
-            // sky.style.bottom = value * 1.05 + 'px';
-            stars.style.top = value * 1.05 + 'px';
-            birds.style.marginLeft = value * 1.05 + 'px';
-            mountains.style.top = value * 0.5 + 'px';
-            forest.style.top = value * 0.5 + 'px';
-            fild.style.bottom = value * 0 + 'px';
-            // stars.style.left = value * 0.25 + 'px';
-            // moon.style.top = value * 1.05 + 'px';
-            // mountains_behind.style.top = value * 0.5 + 'px';
-            // mountains_front.style.top = value * 0 + 'px';
+        let scrollTargetY = 0;
+        let scrollY = 0;
 
-            text.style.marginRight = value * 4 + 'px';
-            text.style.marginTop = value * 1.5 + 'px';
-            btn.style.marginTop = value * 1.5 + 'px';
-            header.style.top = value * 0.5 + 'px';
+        let update = () => {
+            scrollTargetY = window.scrollY;
+            scrollY += (scrollTargetY - scrollY)
+            let value = Math.round(scrollY);
+
+            stars.style.transform = `translate(0px, ${value * 1.05}px)`;
+            birds.style.transform = `translate(${value * 1.05}px, 0px)`;
+            mountains.style.transform = `translate(0px, ${value * 0.5}px)`;
+            forest.style.transform = `translate(0px, ${value * 0.5}px)`;
+            text.style.transform = `translate(${-value * 4}px, ${value * 1.5}px)`;
+            btn.style.transform = `translate(0px, ${value * 1.5}px)`;
+            header.style.transform = `translate(0px, ${value * 0.5}px)`;
+
+            requestAnimationFrame(update)
+        }
+        requestAnimationFrame(update)
+
+        window.addEventListener('scroll', function () {
+            
         })
 
     </script>

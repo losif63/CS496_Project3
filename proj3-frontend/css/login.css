@@ -1,0 +1,138 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url("back_login.jpg");
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container-body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-vertical {
+    display: flex;
+    flex-direction: row;
+    height: 527px;
+}
+
+.container-seperator {
+    width: 200px;
+}
+
+.container {
+    width: 380px;
+    /* margin-left: 21%; */
+    /* margin-top: 175px; */
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 17px #B4BDF1;
+}
+
+.container2 {
+    width: 380px;
+    /* margin-top: 175px; */
+    /* margin-right: -10%; */
+    /* margin-left: 25%; */
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 17px #ffff;
+}
+
+.header {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.header2 {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.header h1 {
+    color: #32334D;
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.header2 h1 {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.main {
+    text-align: center;
+}
+
+.main2 {
+    text-align: center;
+    display: inline-block;
+}
+
+.main input,
+button {
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+    border-radius: 15px;
+}
+
+.main button {
+    padding-left: 0;
+    background-color: #83acf1;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.main button:hover {
+    box-shadow: 2px 2px 5px #555;
+    background-color: #7799d4;
+}
+
+.main input:hover {
+    box-shadow: 2px 2px 5px #555;
+    background-color: #ddd;
+}
+
+.main span {
+    position: relative;
+}
+
+.main i {
+    position: absolute;
+    left: 15px;
+    color: #333;
+    font-size: 16px;
+    top: 2px;
+}
+
+#btnSignupRedirect {
+    background-color: #faf1d6;
+}
+
+#play_btn {
+    background-color: #ece3fc;
+}
+
+#lblLoginErrorMessage {
+    color: #e63552;
+    margin-bottom: 25px;
+}

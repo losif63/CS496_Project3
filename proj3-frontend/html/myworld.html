@@ -1,17 +1,80 @@
-<!DOCTYPE html>
-<html>
-    <script src="checkauth.js"></script>
-    <head>
-        <title>Myworld Page</title>
-    </head>
+<!DOCTYPE HTML>
 
-    <body>
-        <div id="myworld">
-            <div class="header">
-              <h1>Myworld</h1>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My World</title>
+    <script src="https://kit.fontawesome.com/06ea089c1f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="myworld.css">
+    <link rel="shortcut icon" type="x-icon" href="icon_big.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="center">
+        <div class="bio_card">
+            <div class="left">
+                <!-- <div class="btn">
+                    <i class="fa-solid fa-plus"></i>
+                </div> -->
+                <img src="main_bg.png" class="cover">
+                <div class="profile">
+                    <img class="pdp" id="profileImg">
+
+                </div>
+
+
+                <!-- <h1><button class="edit_btn">편집</button></h1> -->
+                <br>
+                <br>
+                <div class="box">
+                    <div class="form">
+                        <label class="custom-field">
+                            <ul id="username">닉네임: </ul>
+                            <br>
+                            <ul id="occupation">직업: </ul>
+                            <br>
+                            <ul id="hobby">취미: </ul>
+                            <!-- <div class="input">닉네임: <input type="text"></div>
+                            <div class="input">직업: <input type="text2"></div>
+                            <div class="input">취미: <input type="text2"></div>
+                            <div class="input">상태 메시지: <input type="text2"></div> -->
+                        </label>
+                    </div>
+                    <div>
+                    </div>
+
+                </div>
+                <div> <textarea class="today" placeholder="What are your thoughts today?" id="statusmessage"></textarea></div>
+                <!-- <h1>Subscribe</h1> -->
+                <button class="profile_btn">프로필 수정</button>
+
+
+
+                <div class="profile_bottom">
+
+                </div>
             </div>
-              <button id="btnLogout" type="button" class="button buttonBlue">Logout</button>
+            <div class="right">
+                <button><i class="far fa-envelope"></i>배경 바꾸기</button>
+            </div>
         </div>
-        <script src="myworld.js"></script>
-    </body>
+    </div>
+    </div>
+    <!-- <script type="text/javascript" src="btn.js"></script> -->
+
+    </div>
+    <div class="wrapper">
+        <div class="button">
+            <div class="icon" id="btnLogout"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
+            <span>Log Out</span>
+        </div>
+    </div>
+    <!-- <button id="btnLogout" type="button" class="button buttonBlue">Logout</button> -->
+    </div>
+</body>
+
 </html>
+
+<script src="myworld.js"></script>

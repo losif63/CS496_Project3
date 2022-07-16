@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 
 * {
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -11,7 +11,7 @@
 body {
     min-height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(#b4bdf1, #ffc7c3);
+    background: linear-gradient(#b4bdf1, #e63552);
 }
 
 header {
@@ -19,7 +19,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 5px 100px;
+    padding: 5px 33px;
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
@@ -123,18 +123,18 @@ section img#fild {
 
 #text {
     position: absolute;
-    right: -350px;
+    right: 0px;
     color: #ffff;
     white-space: nowrap;
-    font-size: 7.5vw;
+    font-size: 5vw;
     z-index: 9;
-    margin-bottom: 10vw;
+    margin-bottom: 13vw;
 }
 
 #btn {
     text-decoration: none;
     display: inline-block;
-    padding: 8px 30px;
+    padding: 10px 30px;
     border-radius: 40px;
     background: #ffff;
     color: #2b1055;
@@ -159,4 +159,21 @@ section img#fild {
 .sec p {
     font-size: 1.2em;
     color: #ffff;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+#logo {
+    font-size: 24px;
+    margin-left: 7px;
+    margin-top: 1px;
+}
+
+#logoicon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
 }

@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <script src="checkauth.js"></script>
+<script src="checkauth.js"></script>
+
 <head>
     <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="shortcut icon" type="x-icon" href="icon_big.png">
+    <script src="https://kit.fontawesome.com/06ea089c1f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div id="login">
-        <div class="header">
-          <h1>Login</h1>
+    <div class="container-body">
+        <div class="container-vertical">
+            <div class="container2">
+                <div class="header2">
+                    <h1>Login as guest</h1>
+                </div>
+                <div class="main">
+                    <form>
+                        <span>
+                            <i class="fa fa-fire-flame-curved"></i>
+                            <input id="txtRoomCode" type="text" placeholder="Room Code">
+                        </span>
+                        <br>
+                        <span>
+                            <i class="fa fa-user"></i>
+                            <input id="txtGuestName" type="text" placeholder="Name">
+                        </span><br>
+                        <button id="play_btn" type="button" class="button buttonBlue">Play</button>
+                    </form>
+                </div>
+            </div>
+            <div class="container-seperator"></div>
+            <div class="container">
+                <div class="header">
+                    <h1>Login</h1>
+                </div>
+                <div class="main">
+                    <form>
+                        <span>
+                            <i class="fa fa-user"></i>
+                            <input id="txtEmail" type="email" placeholder="Email">
+                        </span><br>
+                        <span>
+                            <i class="fa fa-lock"></i>
+                            <input id="txtPassword" type="password" placeholder="Password">
+                        </span>
+                        <div id="divLoginError" class="group">
+                            <div id="lblLoginErrorMessage" class="errorlabel"></div>
+                        </div>
+                        <button id="btnLogin" type="button" class="button buttonBlue">Log in</button>
+                        <button id="btnSignupRedirect" type="button" class="button buttonBlue">Don't have an
+                            account?</button>
+                    </form>
+                </div>
+    
+            </div>
         </div>
-        <form>
-          <div class="group">
-            <input id="txtEmail" type="email">
-            <label>Email</label>
-          </div>
-          <div class="group">
-            <input id="txtPassword" type="password">
-            <label>Password</label>
-          </div>
-          <div id="divLoginError" class="group">
-            <div id="lblLoginErrorMessage" class="errorlabel">(Potential Error message)</div>
-          </div>
-          <button id="btnLogin" type="button" class="button buttonBlue">Log in</button>
-          <button id="btnSignupRedirect" type="button" class="button buttonBlue">Don't have an account?</button>
-        </form>
-      </div>
+    </div>
 </body>
+
 </html>
 
 <script src="login.js"></script>

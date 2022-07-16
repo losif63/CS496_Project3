@@ -10,6 +10,10 @@ app.use(express.static(path.join(__dirname, '../proj3-frontend/html')));
 app.use(express.static(path.join(__dirname, '../proj3-frontend/css')));
 app.use(express.static(path.join(__dirname, '../proj3-frontend/dist')));
 
+const profilePicRouter = require('./profilepicrouter');
+app.use('/profilepic', profilePicRouter);
+
+
 app.get('/', (req, res) => {
     console.log(`Get Request to ${req.url}`);
     res.sendFile(path.join(__dirname, '../proj3-frontend/html/index.html'));

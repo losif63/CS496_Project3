@@ -1,7 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, setPersistence, browserLocalPersistence, onAuthStateChanged } from 'firebase/auth';
 
-
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyAu9Uk0w0SzdoMrGhz_gOWlnRLmYA5b8Oo",
     authDomain: "mdcmpwrld.firebaseapp.com",
@@ -29,9 +28,14 @@ setPersistence(auth, browserLocalPersistence).then(() => {
             console.log(`User is not logged in!`);
             location.href = "/login";
             console.log('Redirection to login page!');
+        } else if (!user && window.location.href === "https://www.mdcmpwrld.ga/") {
+            console.log('Changing button redirection2!');
+            document.getElementById("btnMyworld").href = "/login";
         }
     });
 });
+
+console.log('Hello!');
 
 
 
