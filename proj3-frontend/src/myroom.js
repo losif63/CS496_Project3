@@ -1,10 +1,12 @@
+import { collisions } from './collisions.js'
+
 const canvas = document.querySelector('canvas'); // index.html의 canvas를 불러옴
 const c = canvas.getContext('2d'); // context는 많이 쓰기 때문에 c라는 변수로 사용
 canvas.width = 480; // 12 * 20 * 2
 canvas.height = 240; // 12 * 20 * 2
 let TILES = 20; // 가로세로 타일수
 let SIZE = 24; // 타일 하나의 사이즈
-let mappaths = ['./images/icemap.png', './images/protomap.png'];
+let mappaths = ['icemap.png', 'protomap.png'];
 let mapnum = 0;
 
 const collisionsMap = [];
@@ -50,10 +52,10 @@ console.log(boundaries);
 //c.fillRect(0, 0, canvas.width, canvas.height);
 
 const image = new Image(); // 배경
-image.src =  mappaths[mapnum]; // 원래 더 큰 이미지, 작은 canvas 사이즈로 시야이동도 구현 가능
+image.src = mappaths[mapnum]; // 원래 더 큰 이미지, 작은 canvas 사이즈로 시야이동도 구현 가능
 
 const playerImage = new Image(); // 플레이어 이미지 만들기
-playerImage.src = './images/Girl-Sheet.png';
+playerImage.src = 'Girl-Sheet.png';
 //console.log(collisions);
 
 //image.onload = () => {
@@ -135,7 +137,7 @@ let notmove = [0, 0, 0, 0]; // 0: 해당방향 이동가능, 1: 이동불가
 function isinsquare(x, y, bx, by , sz){
     
     if(x+12>=bx && x<=bx+sz && y+12>=by && y<=by+sz) {
-        console.log([x, y, bx, by]);
+        //console.log([x, y, bx, by]);
         return 1;
     }
     else return 0;
@@ -169,7 +171,7 @@ function checkmov(){ // 현재 height=32, width=32인 상태
 
     })
 
-    console.log(notmove);
+    //console.log(notmove);
 }
 
 function animate(){
@@ -191,7 +193,7 @@ function animate(){
         cropx = (cropx + 1)%24;
         cropy = 3;
         //background.position.y += 5;   
-        console.log("w pressed");
+        //console.log("w pressed");
 
         if(notmove[0] == 0) chr.position.y -= 3;
     }
@@ -240,7 +242,7 @@ window.addEventListener('keydown', (e) =>{ // 키가 입력되었는가?
             lastKey = 'd';
             break
     }
-    console.log(keys);
+    //console.log(keys);
 })
 
 window.addEventListener('keyup', (e) =>{ // 키가 입력되었는가?
@@ -258,7 +260,7 @@ window.addEventListener('keyup', (e) =>{ // 키가 입력되었는가?
             keys.d.pressed = false
             break
     }
-    console.log(keys);
+    //console.log(keys);
 })
 
 

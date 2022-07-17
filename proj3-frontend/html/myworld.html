@@ -28,7 +28,17 @@
                 <!-- <h1><button class="edit_btn">편집</button></h1> -->
                 <br>
                 <br>
-                <div class="box">
+                <div class="custom-field">
+                    <ul id="username" class="underlined underlined--gradient">닉네임: </ul>
+                </div>
+                <div class="custom-field">
+                    <ul id="occupation">직업: </ul>
+                </div>
+                <div class="custom-field">
+                    <ul id="hobby">취미: </ul>
+                </div>
+
+                <!-- <div class="box">
                     <div class="form">
                         <label class="custom-field">
                             <ul id="username">닉네임: </ul>
@@ -36,17 +46,18 @@
                             <ul id="occupation">직업: </ul>
                             <br>
                             <ul id="hobby">취미: </ul>
-                            <!-- <div class="input">닉네임: <input type="text"></div>
+                            <div class="input">닉네임: <input type="text"></div>
                             <div class="input">직업: <input type="text2"></div>
                             <div class="input">취미: <input type="text2"></div>
-                            <div class="input">상태 메시지: <input type="text2"></div> -->
+                            <div class="input">상태 메시지: <input type="text2"></div>
                         </label>
                     </div>
                     <div>
                     </div>
 
+                </div> -->
+                <div> <textarea class="today" placeholder="What are your thoughts today?" id="statusmessage"></textarea>
                 </div>
-                <div> <textarea class="today" placeholder="What are your thoughts today?" id="statusmessage"></textarea></div>
                 <!-- <h1>Subscribe</h1> -->
                 <button class="profile_btn">프로필 수정</button>
 
@@ -58,6 +69,14 @@
             </div>
             <div class="right">
                 <button><i class="far fa-envelope"></i>배경 바꾸기</button>
+                <div>
+                    <!-- 대충 여기다가 글 목록 넣기 -->
+                </div>
+                <div>
+                    <canvas id="myroom"></canvas>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -76,5 +95,7 @@
 </body>
 
 </html>
+<script src="collisions.js"></script>
+<script src="myroom.js"></script>
 
 <script src="myworld.js"></script>

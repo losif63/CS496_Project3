@@ -6,6 +6,7 @@ const app = express();
 
 
 app.use(express.static(path.join(__dirname, '../proj3-frontend/assets')));
+app.use(express.static(path.join(__dirname, '../proj3-frontend/assets/maps')));
 app.use(express.static(path.join(__dirname, '../proj3-frontend/html')));
 app.use(express.static(path.join(__dirname, '../proj3-frontend/css')));
 app.use(express.static(path.join(__dirname, '../proj3-frontend/dist')));
