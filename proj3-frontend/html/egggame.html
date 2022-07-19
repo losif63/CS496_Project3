@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Touch it!</title>
+    <link rel="shortcut icon" type="x-icon" href="icon_big.png">
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="wrapper">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <style>
+        html {
+            height: 100%;
+
+        }
+
+        body {
+            height: 100%;
+            background-image: url("bg_coins.jpg");
+            background-repeat: no-repeat;
+            overflow: hidden;
+            background-size: cover;
+            background-attachment: fixed;
+            justify-content: center;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+            display: table;
+        }
+
+        .wrapper {
+            display: table-cell;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        #canvas {
+            width: 480px;
+            height: 640px;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+    <script src="egggame.js"></script>
+</body>
+
+</html>

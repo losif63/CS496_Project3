@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Serif KR', serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url("beach3.jpg");
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    height: 100%;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 270px;
+    margin: 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card-image {
+    height: 200px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.car-1 {
+    background-image: url('game_one.jpg');
+}
+
+.car-2 {
+    background-image: url('dodge3.jpg');
+}
+
+.car-3 {
+    background-image: url('swipe.png');
+}
+
+.car-4 {
+    background-image: url('tetris.jpg');
+}
+
+.car-5 {
+    background-image: url('stack.png');
+}
+
+.card p {
+    padding: 20px;
+}
+
+.card a {
+    background-color: #5cb6e2;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.card:hover {
+    background-color: #f1c25b;
+    color: #333;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+
+}

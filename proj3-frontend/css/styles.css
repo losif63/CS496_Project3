@@ -177,3 +177,11 @@ section img#fild {
     height: 45px;
     object-fit: cover;
 }
+
+footer {
+    text-align: center;
+    background-color: #9a6e79;
+    color: #fff;
+    padding: 20px;
+    font-size: 25px;
+}

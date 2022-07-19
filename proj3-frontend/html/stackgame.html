@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title>Touch it!</title>
+  <link rel="shortcut icon" type="x-icon" href="icon_big.png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #333333;
+    }
+
+    .container {
+      width: 1000px;
+      height: 800px;
+      margin: calc((100vh - 820px) / 2) auto;
+      position: relative;
+    }
+
+    canvas {
+      position: absolute;
+    }
+
+    #canvas {
+      background: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <canvas id="canvas"></canvas>
+    <canvas id="ui"></canvas>
+  </div>
+
+  <script src="stackgame.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" type="x-icon" href="icon_big.png">
+  <meta name="viewport" content="width = device-width, initial-scale = 1" />
+  <title>Tetris game</title>
+  <style>
+    html {
+        height: 100%;
+    }
+
+    body {
+      text-align: center;
+      background-image: url("test_bg.jpg");
+      background-repeat: no-repeat;
+      overflow: hidden;
+      background-size: cover;
+      background-attachment: fixed;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+        display: table;
+    }
+
+    .wrapper {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    #my-canvas {
+      background: #fff;
+      margin-left: 10px;
+      margin-top: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="wrapper">
+      <canvas id="my-canvas"></canvas>
+    </div>
+  </div>
+
+  <script src="tetris.js"></script>
+</body>
+
+</html>

@@ -1,17 +1,27 @@
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>My World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Noto+Serif+KR&family=Sunflower:wght@500&family=Yeon+Sung&display=swap"
+        rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/06ea089c1f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="myworld.css">
     <link rel="shortcut icon" type="x-icon" href="icon_big.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+    <div id="searchuser">
+        <input id="searchUID" type="text" placeholder="유저 찾기">
+        <button id="btnSearch">검색</button>
+    </div>
     <div class="center">
         <div class="bio_card">
             <div class="left">
@@ -21,6 +31,9 @@
                 <img src="main_bg.png" class="cover">
                 <div class="profile">
                     <img class="pdp" id="profileImg">
+                    <ul id="moneydisplay"><img class="money" src="money.png">
+                        <p id="currency"></p>
+                    </ul>
 
                 </div>
 
@@ -29,53 +42,94 @@
                 <br>
                 <br>
                 <div class="custom-field">
-                    <ul id="username" class="underlined underlined--gradient">닉네임: </ul>
+                    <div class="nickname">
+                        <img src="heart2.gif" class="nickname_tag">
+                        <ul id="username" class="nickname">닉네임: </ul>
+                    </div>
+                    <input id="usernameInput" type="text" placeholder="닉네임">
                 </div>
                 <div class="custom-field">
-                    <ul id="occupation">직업: </ul>
+                    <div class="nickname">
+                        <img src="job2.gif" class="nickname_tag">
+                        <ul id="occupation"> 직업: </ul>
+                    </div>
+                    <input id="occupationInput" type="text" placeholder="직업">
                 </div>
                 <div class="custom-field">
-                    <ul id="hobby">취미: </ul>
+                    <div class="nickname">
+                        <img src="hobby.gif" class="nickname_tag">
+                        <ul id="hobby"> 취미: </ul>
+                    </div>
+                    <input id="hobbyInput" type="text" placeholder="취미">
                 </div>
 
-                <!-- <div class="box">
-                    <div class="form">
-                        <label class="custom-field">
-                            <ul id="username">닉네임: </ul>
-                            <br>
-                            <ul id="occupation">직업: </ul>
-                            <br>
-                            <ul id="hobby">취미: </ul>
-                            <div class="input">닉네임: <input type="text"></div>
-                            <div class="input">직업: <input type="text2"></div>
-                            <div class="input">취미: <input type="text2"></div>
-                            <div class="input">상태 메시지: <input type="text2"></div>
-                        </label>
-                    </div>
-                    <div>
-                    </div>
-
+                <!-- <div class="custom-field">
+                    <ul id="statusmessage">오늘 상태: </ul>
+                    <input id="statusmessage" type="text" placeholder="오늘 상태:">
                 </div> -->
+
                 <div> <textarea class="today" placeholder="What are your thoughts today?" id="statusmessage"></textarea>
                 </div>
+                <div class="custom-field">
+                    <input id="statusmsgInput" type="text" placeholder="상태 메세지">
+                </div>
                 <!-- <h1>Subscribe</h1> -->
-                <button class="profile_btn">프로필 수정</button>
-
-
-
+                <button class="profile_btn" id="procEditProfile">프로필 수정</button>
+                <button class="profile_btn" id="editProfile">수정</button>
                 <div class="profile_bottom">
-
+                    <!-- <img class="lottery" src="heart.png"> -->
+                    <div class="wrapper">
+                        <a class="game_btn" href="/choosegame">
+                            <div class="icon_game" id="btnGame"><img
+                                    src="https://img.icons8.com/dusk/64/000000/controller.png" /></i>
+                            </div>
+                            <span>게임 시작</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="right">
-                <button><i class="far fa-envelope"></i>배경 바꾸기</button>
+                <!-- <button><i class="far fa-envelope"></i>배경 바꾸기</button> -->
                 <div>
+                    <div class="board_wrap">
+                        <div class="board_title">
+                            <div id="leftman">
+                                <p>My Homepage</p>
+                            </div>
+                            <div id="middleman">
+                            </div>
+                            <div id="rightman">
+                                <a href="/writepost" class="bt_wrap">등록</a>
+                            </div>
+
+                        </div>
+                        <div class="board_list_wrap">
+                            <div class="board_list" id="postlist">
+                                <div class="top">
+                                    <div class="num">번호</div>
+                                    <div class="title">제목</div>
+                                    <div class="writer">글쓴이</div>
+                                    <div class="date">작성일</div>
+                                </div>
+                            </div>
+                            <div class="board_page">
+                                <a href="#" class="bt first"> &lt;&lt; </a>
+                                <a href="#" class="bt prev"> &lt; </a>
+                                <a href="#" class="num on">1</a>
+                                <!-- <a href="#" class="num">2</a>
+                                <a href="#" class="num">3</a>
+                                <a href="#" class="num">4</a>
+                                <a href="#" class="num">5</a> -->
+                                <a href="#" class="bt next">></a>
+                                <a href="#" class="bt last">>></a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- 대충 여기다가 글 목록 넣기 -->
                 </div>
-                <div>
+                <div class="myroomdiv" id="myroomdiv">
                     <canvas id="myroom"></canvas>
                 </div>
-
 
             </div>
         </div>
@@ -84,6 +138,17 @@
     <!-- <script type="text/javascript" src="btn.js"></script> -->
 
     </div>
+    <section id="backgroundchange">
+        <div class="bg"></div>
+        <select name="bg" id="bg" onchange="changeTheme()">
+            <option value="lake">Lake</option>
+            <option value="night">Night</option>
+            <option value="summer_lake">Summer Lake</option>
+            <option value="spring_window">Spring Window</option>
+            <option value="winter_window">Winter Window</option>
+            <option value="winter">Winter</option>
+        </select>
+    </section>
     <div class="wrapper">
         <div class="button">
             <div class="icon" id="btnLogout"><i class="fa-solid fa-arrow-right-from-bracket"></i></div>
@@ -97,5 +162,29 @@
 </html>
 <script src="collisions.js"></script>
 <script src="myroom.js"></script>
-
 <script src="myworld.js"></script>
+
+<script>
+    const changeTheme = () => {
+        var e = document.getElementById("bg");
+        var strUser = e.options[e.selectedIndex].value;
+        if (strUser == "lake") {
+            document.body.style.backgroundImage = "url('lake.jpg')";
+        }
+        else if (strUser == "night") {
+            document.body.style.backgroundImage = "url('night.jpg')";
+        }
+        else if (strUser == "summer_lake") {
+            document.body.style.backgroundImage = "url('spring_lake.jpg')";
+        }
+        else if (strUser == "spring_window") {
+            document.body.style.backgroundImage = "url('window.jpg')";
+        }
+        else if (strUser == "winter_window") {
+            document.body.style.backgroundImage = "url('window_w.jpg')";
+        }
+        else if (strUser == "winter") {
+            document.body.style.backgroundImage = "url('winter.jpg')";
+        }
+    }
+</script>

@@ -23,12 +23,22 @@ setPersistence(auth, browserLocalPersistence).then(() => {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             console.log(userCredential.user.uid);
             const userData = doc(firestore, `userData/${userCredential.user.uid}`);
+            const userPost = doc(firestore, `userData/${userCredential.user.uid}/Posts/firstPost`);
             await setDoc(userData, {
                 username: '',
                 occupation: '',
                 hobby: '',
                 statusmessage: '',
-                profileURI: 'https://www.mdcmpwrld.ga/profilepic/DEFAULT'
+                profileURI: 'https://www.mdcmpwrld.ga/profilepic/DEFAULT',
+                currency: 0,
+                inventory: [2, 0, 0, 0, 0, 0]
+            }, { merge: true });
+            const d = new Date();
+            await setDoc(userPost, {
+                title: "Myworld에 오신 것을 환영합니다!",
+                description: "Myworld에 오신 것을 환영합니다! Myworld에서는 게임을 즐기거나 다른 사람들의 피드에 글을 올려 코인을 얻고, 얻은 코인을 이용하여 MyRoom을 얻을 수 있습니다! 좋은 시간 되시기 바랍니다.",
+                publishDay: d.toISOString().replace('T', ' ').replace('-', '.').replace('-', '.'),
+                publisher: 'MyWorld.ga'
             }, { merge: true });
             location.href = '/myworld';
         } catch(error) {
